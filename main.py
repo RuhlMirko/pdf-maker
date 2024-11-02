@@ -12,9 +12,10 @@ for index, row in df.iterrows():
     pdf.set_text_color(0, 0, 0)
     pdf.set_font('Times', 'B', 20)
     pdf.cell(h=10, text=row['Topic'], new_x="LMARGIN", new_y="NEXT")
-    pdf.line(10, 20, 200, 20)
 
     for page in range(row['Pages']):
+        for i in range(20, 298, 10):
+            pdf.line(10, i, 200, i)
         pdf.set_y(-10)
         # Setting font: helvetica italic 8
         pdf.set_font("helvetica", "I", 8)
